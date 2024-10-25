@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="uds.route.web.mapper.MainMapper">
+	
+	<!-- 일별 방문자수 차트 -->
+	<select id="listVisitDate" parameterType="Map" resultType="Map">
+		select regdate, count(*) cnt
+		from
+		(
+			select 
+			date_format(regdate, '%Y-%m-%d') regdate, kakao_id
+			from t_push_session
+			where length(kakao_id)>0
+			and date(date_format(regdate, '%Y-%m-%d')) <![CDATA[>=]]> date(#{start_date})
+			and date(date_format(regdate, '%Y-%m-%d')) <![CDATA[<=]]> date(#{end_date})
+			group by date_format(regdate, '%Y-%m-%d'), kakao_id 
+		) aa
+		group by regdate
+		order by regdate asc
+	</select>
+
+</mapper>
+	

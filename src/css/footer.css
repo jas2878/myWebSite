@@ -1,0 +1,74 @@
+footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #0d223f;
+  border-top: 1px solid #cdcdcd4d;
+}
+footer > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 50%;
+}
+
+footer > div > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.footerlogo {
+  margin-left: 0;
+}
+
+.footerlogo img {
+  width: 58%;
+}
+
+.footertext {
+  margin-right: 0;
+}
+.footertext > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.footertext > div > div {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+.footertext div:last-child {
+  margin-bottom: 0;
+}
+
+.footertext div > div p {
+  margin-left: 0;
+  width: 50px;
+  font-size: 14px;
+  color: #cdcdcd;
+  margin-right: 0;
+}
+
+.footertext div span {
+  display: block;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #cdcdcd;
+}
+.footertext div.footeremail {
+  flex-direction: column;
+}
+.footertext div.footeremail span {
+  margin-left: 0;
+}
+
+.footertext {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footerlast {
+  margin-left: 60px;
+}

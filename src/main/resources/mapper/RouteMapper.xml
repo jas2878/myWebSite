@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="uds.route.web.mapper.RouteMapper">
+	
+	<!-- 길찾기 리스트 -->
+	<select id="listRoadMockMst" resultType="Map">
+		select 
+			seq,start_crs_id,start_lat,start_lon,start_desc,end_crs_id,end_lat,end_lon,end_desc,end_person
+		from tb_road_mock_mst
+		where seo_menu=#{seo_menu} and seo_seq=#{seo_seq}::numeric
+		and data_kind=#{data_kind}
+		<if test="route_process != null and route_process != ''">and route_process=#{route_process}</if>
+	</select>
+
+	<!-- 대피로 리스트 -->
+	<select id="listRoadMockRoute2" resultType="Map">
+		select 
+		aa.seq, aa.road_seq, aa.edge_length 
+		, aa.node_id, bb.node_name, ST_AsGeoJSON(bb.geom) as node_geom
+		, aa.link_id, cc.road_name, ST_AsGeoJSON(cc.geom) as link_geom
+		from
+		(
+			select 
+			seq, road_seq, crs_id node_id, edge link_id, edge_length
+			from tb_road_mock_route
+			where road_seq in (
+			select seq from tb_road_mock_mst 
+			where seo_menu=#{seo_menu} and seo_seq=#{seo_seq}::numeric
+			<if test="seo_menu != null and seo_menu == 'FL'">and avoid_type=#{avoid_type}</if>
+			)
+		) aa
+		left join
+		(
+			select node_id, node_name, geom from tb_road_mock_node
+		) bb
+		on aa.node_id::varchar = bb.node_id 
+		left join
+		(
+			select link_id, road_name, geom from tb_road_mock_link
+		) cc
+		on aa.link_id::varchar = cc.link_id 
+		order by seq
+	</select>
+
+	<select id="listRoadMockRoute" resultType="Map">
+		select 
+		aa.seq, aa.road_seq, aa.edge_length 
+		, aa.node_id, bb.node_name, ST_AsGeoJSON(bb.geom) as node_geom
+		, aa.link_id, cc.road_name, ST_AsGeoJSON(cc.geom) as link_geom
+		from
+		(
+			select 
+			seq, road_seq, crs_id node_id, edge link_id, edge_length
+			from tb_road_mock_route
+			where road_seq in (
+			select seq from tb_road_mock_mst 
+			where seo_menu=#{seo_menu} and seo_seq=#{seo_seq}::numeric 
+			and data_kind=#{data_kind}
+			)
+		) aa
+		left join
+		(
+			select node_id, node_name, geom
+			<if test="data_kind == 'mock'">
+			from tb_road_mock_node
+			</if>
+			<if test="data_kind == 'sprd'">
+			from tb_road_sprd_node_busan
+			</if>
+		) bb
+		on aa.node_id::varchar = bb.node_id 
+		left join
+		(
+			select link_id, road_name, geom 
+			<if test="data_kind == 'mock'">
+			from tb_road_mock_link where substring(link_id, 0, 4) <![CDATA[>=]]> '131' and substring(link_id, 0, 4) <![CDATA[<=]]> '145'
+			</if>
+			<if test="data_kind == 'sprd'">
+			from tb_road_sprd_link_busan3
+			</if>
+		) cc
+		on aa.link_id::varchar = cc.link_id 
+		order by seq
+	</select>
+	
+
+</mapper>
+	

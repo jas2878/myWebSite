@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="라미랩 주식회사(Lamilab inc.)">
+    <meta name="keyword"
+        content="라미랩, GIS, 오픈소스 라이브러리, 스타트업, 충남대학교, 대전광역시, 부산광역시, KISTI, 침수, 지진, 행정안전부, 국토교통부, 한국국토정보공사, LX, 벤처기업, 재해위험지구, SV GROUND, 재난안전, 재난대피로, 안전대피로, 공간정보, 3차원 시각화, 디지털트윈, 클라우드, PWA">
+    <meta name="description" content="슈퍼컴퓨터 시뮬레이션을 통해 3차원 가상공간에서 지진과 침수 같은 재난 정보를 시각화합니다. 
+    범국민이 소통하며 재난에 대응할 수 있게끔 안전대피로 서비스 솔루션을 제공하는 
+    대전광역시에 소재한 GIS 공간정보 스타트업 라미랩 주식회사입니다.">
+    <meta name="robots" content="all">
+
+
+    <!-- pwa 매니페스트 파일 연결, 상태바 색상 흰색으로 변경-->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff" />
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/2c2025e86e.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 구글폰트 cdn -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="layerc" href="./openlayer/ol.css" />
+    <script src="./openlayer/ol.js"></script>
+    <!-- 파비콘 -->
+    <link rel="icon" sizes="192x192" href="./images/lami_favicon.svg">
+
+
+    <title>라미랩(Lamilab)</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_logo">
+            <div class="logo">
+                <a href="/">
+                    <img src="./images/lami_logo.svg" alt="">
+                </a>
+            </div>
+            <div class="demo_click">
+                <button id="demo_click_btn" onclick="location.href = '/'">홈</button>
+                <button
+                    onclick="window.open('https\://fate-hisser-b96.notion.site/e3090a60262a4711821ae1e9db1c8c29')">채용</button>
+                <button onclick="location.href = 'https\://demo.lamilab.xyz'">데모</button>
+                <button onclick="window.open('https\://youtube.com/shorts/LdJV7Lzg-5Y?feature=share') ">시연영상</button>
+            </div>
+        </div>
+        <div class="intro_wrap">
+            <div>
+                <p> 지식과 공간의 연결,<br>
+                    <em>라미랩입니다.</em>
+                </p>
+                <div>
+                    <span>
+                        Connect Knowledge and Space!
+                    </span>
+                </div>
+                <div class="inter_btn">
+                    <button onclick="location.href = 'https\://demo.lamilab.xyz'">데모 사용해보기</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main01_section">
+        <div>
+            <p>누구나</p>
+            <span>가상 공간에서 데이터를 <br> 펼쳐놓고 분석한다.</span>
+        </div>
+    </section>
+    <section class="main02_section">
+        <div>
+            <div class="main_lami_icon mainLamiIcom01">
+                <img src="./images/lami_icon01.svg" alt="">
+            </div>
+            <div class="main_lami_text">
+                <p>라미랩의 전략</p>
+            </div>
+
+
+            <div class="main02_content">
+                <div class="info_wrap">
+                    <img src="./images/lami_icon02.svg" alt="">
+                    <p>오픈소스 GIS 라이브러리 활용</p>
+                    <span>GDAL, Openlayers, three.js 등 제약없는 공간정보 오픈소스를 활용합니다.</span>
+                </div>
+                <div class="info_wrap">
+                    <img src="./images/lami_icon03.svg" alt="">
+                    <p>3차원 지도 시각화</p>
+                    <span>Cesium 기반 공간데이터를 3차원으로 시각화하여 편리하고 효과적이도록 했습니다.</span>
+                </div>
+                <div class="info_wrap">
+                    <img src="./images/lami_icon04.svg" alt="">
+                    <p>개방형(공공) 데이터 매시업</p>
+                    <span>3차원 지도에서 공공 데이터를 매시업하여
+                        다양한 주제를 분석할 수 있습니다.</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="main02_inner">
+            <div class="main_lami_icon mainLamiIcom02">
+                <img src="./images/lami_icon05.svg" alt="">
+            </div>
+            <div class="main_lami_text">
+                <p>우리는 함께 해결합니다.</p>
+            </div>
+
+            <div class="main_lamiicon_wrap">
+                <div class="info_wrap info_wrap01">
+                    <img src="./images/lami_icon06.svg" alt="">
+                    <p>도심재난예측 3D 시각화</p>
+
+                </div>
+                <div class="info_wrap info_wrap02">
+                    <img src="./images/lami_icon07.svg" alt="">
+                    <p>파일/API GIS 데이터관리</p>
+
+                </div>
+                <div class="info_wrap info_wrap03">
+                    <img src="./images/lami_icon08.svg" alt="">
+                    <p>혁신클러스터 <br>
+                        공간분석</p>
+
+                </div>
+                <div class="info_wrap info_wrap04">
+                    <img src="./images/lami_icon09.svg" alt="">
+                    <p>공간정보 기반 <br> 지식네트워크 분석</p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- 박람회 -->
+    <article class="Ksafetypopup" id="Ksafetypopup">
+        <!-- <div class="Ksafetypopupimg" id="Ksafetypopupimg20">
+            <div>
+                <img src="./images/beyondTechExpo.jpg" alt=""
+                    onclick="window.open('https://smartconexpo.com/') ">
+                <div class="Ksafetypopuptitle">
+                    <p>라미랩 주식회사 부스 위치: H15(데이터&플랫폼 부스)</p>
+                </div>
+                <div class="Ksafetypopupclose">
+                    <button class="Ksafetypopupclosebtn" onclick="todayClose('Ksafetypopupimg20', 1);">오늘 하루 보지
+                        않기</button>
+                    <button id="Ksafetypopupclosebtn" class="Ksafetypopupclosebtnclose">닫기</button>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="Ksafetypopupimg02" id="Ksafetypopupimg4">
+            <div>
+                <img src="./images/Ksafety02.png" alt=""
+                    onclick="window.open('https://wsce.micehub-gov.com/fairVst2.do?FAIRMENU_IDX=7593&hl=KOR') ">
+                <div class="Ksafetypopuptitle">
+                    <p>라미랩 주식회사 부스: D11-18 </br> (스마트시티 기업 공동전시관)</p>
+                </div>
+                <div class="Ksafetypopupclose">
+                    <button class="Ksafetypopupclosebtn" onclick="todayClose('Ksafetypopupimg4', 1);">오늘 하루 보지
+                        않기</button>
+                    <button id="Ksafetypopupclosebtn01" class="Ksafetypopupclosebtnclose">닫기</button>
+                </div>
+            </div>
+        </div> -->
+    </article>
+    <section class="main03_section" id="mainSection">
+        <div class="main_03title">
+            <h2>3D GIS 기반 도시재난 시각화 솔루션</h2>
+            <button onclick="downloadPDF()">리플렛 다운로드(PDF)</button>
+        </div>
+        <div class="tabmenu out-tabmenu">
+            <ul>
+                <li id="tab1" class="btnCon">
+                    <input type="radio" checked name="tabmenu" id="tabmenu1">
+                    <label for="tabmenu1">지진 솔루션</label>
+
+
+                </li>
+                <li id="tab2" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu2">
+                    <label for="tabmenu2">침수 솔루션</label>
+
+
+                </li>
+                <li id="tab3" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu3">
+                    <label for="tabmenu3">GIS 데이터 관리</label>
+
+
+                </li>
+                <li id="tab5" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu5">
+                    <label for="tabmenu5">시뮬레이션</label>
+
+
+                </li>
+                <li id="tab4" class="btnCon"><input type="radio" name="tabmenu" class="label_checked" id="tabmenu4">
+                    <label for="tabmenu4">안전대피로 서비스</label>
+
+
+                </li>
+            </ul>
+            <div class="tabCon" id="tabCon_01" style="display: block;">
+                <div class="tabConTitle">
+                    <p>실시간 지진 상황을 모니터링하고 슈퍼컴퓨터를 활용하여 모의한 지진 시나리오에 따른 지반운동과 건물 피해를 상황 대응에 활용할 수 있습니다.</p>
+                </div>
+                <div class="tabCon_wrap">
+                    <div>
+                        <div>
+                            <img src="./images/solution.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>실시간 상황 분석</h2>
+                        </div>
+                        <div class="tabCon_content">
+                            <p>· 최근 1개월 지진 정보 지도 표출 </p 매뉴얼 제공>
+                            <p>· 지진관련 중요 위치 정보 등 제공 </p>
+                            <p>· 시나리오 분석 정보 연계 </p>
+                            <p>· 화면 데이터 반출 기능 </p>
+                            <p>· 상황 발생 시 대응메뉴얼 제공 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn01">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution02.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>건물 피해 분석</h2>
+                        </div>
+                        <div class="tabCon_content">
+                            <p>· 인공지능 기반 지진 건물 피해 예측 </p>
+                            <p>· 3D GIS 기반 지진 건물 피해 시각화 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn02">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution03.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>지반 운동 분석</h2>
+                        </div>
+                        <div class="tabCon_content">
+                            <p>· 슈퍼컴퓨터 활용 지진 속도모델 계산 </p>
+                            <p>· 시계열 데이터 최적화를 통한 지반운동 시뮬레이션 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn03">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tabCon" id="tabCon_02">
+                <div class="tabConTitle">
+                    <p>기상 예보를 활용해 침수 발생 위험 지역을 예측하고 다양한 시나리오에 따른 침수 예상 지역을 연동하여 상황에 대비할 수 있습니다.</p>
+                </div>
+                <div class="tabCon_wrap">
+                    <div>
+                        <div>
+                            <img src="./images/solution04.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>실시간 상황 분석</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 기상 특보 현황 </p>
+                            <p>· 기상 특보 API 실시간 호출 </p>
+                            <p>· 사용자 지역 하이라이트 표시 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn04">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution14.png" alt="">
+                        </div>
+                        <div>
+                            <h2>대응 메뉴얼 제공</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 대응매뉴얼 연동</p>
+                            <p>· 부서별 대응매뉴얼 구축</p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn17">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution05.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>내수 침수 분석</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 내수침수 시나리오 분석 </p>
+                            <p>· 최적대피로 안내 </p>
+                            <p>· 다양한 공간정보 제공 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn05">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tabCon" id="tabCon_03">
+                <div class="tabConTitle">
+                    <p>3D 지도 위에 다양한 형태의 공간 정보를 입력 및 업로드하실 수 있습니다. API를 잘 모르는 사람도 손쉽게 실시간 데이터를 연계할 수 있어요.</p>
+                </div>
+                <div class="tabCon_wrap">
+                    <div>
+                        <div>
+                            <img src="./images/solution06.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>마커</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>지도의 해당 위치에 아이콘을 표시하고 상세정보를 텍스트, 이미지, 동영상의 형태로 제공할 수 있는 기능을 등록할 수 있습니다.</p>
+
+                        </div>
+                        <div class="tab_btn" id="solutionBtn06">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution07.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>SHP</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>선 또는 면으로 된 지리정보를 지도에 시각화 할 수 있는 기능입니다. 파일 형식은 SHP 및 관련 파일이며, 시각화 스타일을 설정할 수 있습니다.
+                            </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn07">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution08.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>히트맵</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>좌표에 해당하는 숫자 값을 구간별 레이어 설정을 통해 히트맵의 형태로 시각화 하는 기능입니다.</p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn08">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution09.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>그래프</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>지역 및 솔루션과 관련한 정보를 그래프 형태로 제공할 수 있는 기능입니다.</p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn09">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution0.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>테이블</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>지역 및 솔루션과 관련한 정보를 테이블 형태로 제공할 수 있는 기능입니다.</p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn10">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tabCon" id="tabCon_05">
+                <div class="tabConTitle">
+                    <p>분포형 강우-유출 모형을 적용한 정확도 높은 홍수 예측 시스템 기반의 해당 솔루션은 실시간 강우량 입력만으로 피해 범위를 사전 예측할 수 있습니다.</p>
+                </div>
+
+                <div class="tabCon_wrap">
+                    <div>
+                        <div>
+                            <img src="./images/solution14.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>3D 기반 시뮬레이션 예측 비교</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 과거 침수 사례 시뮬레이션 비교 </p>
+                            <p>· 시간당 침수 시나리오 구축 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn11">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution15.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>과거 침수 내역 등 데이터 관리</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 침수지도 비교를 위한 데이터관리 기능 개발</p>
+                            <p>· 시도별 하천, 유역 데이터관리 기능 개발 </p>
+                            <p>· 시뮬레이션 고도화를 위한 환경공간정보 데이터 관리 기능 개발</p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn12">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution16.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>하수관거 데이터 관리</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 데이터 하수관거 수정 </p>
+                            <p>· 데이터 아카이브 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn13">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tabCon" id="tabCon_04">
+                <div class="tabConTitle">
+                    <p>지진, 침수 시뮬레이션을 바탕으로 위험 지역을 우회하며 대피할 수 있습니다. 실시간 위험도 공유할 수 있어요.</p>
+                </div>
+
+                <div class="tabCon_wrap">
+                    <div>
+                        <div>
+                            <img src="./images/solution10.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>시나리오 관리</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 솔루션 시나리오별 최적 대피로 안내 </p>
+                            <p>· 대피로 데이터 제공 </p>
+                            <p>· 최적대피로 안내 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn14">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution11.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>모바일 안전대피로 앱</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· PWA방식의 웹앱 구현</p>
+                            <p>· 현 위치 기준 대피로 제공 </p>
+                            <p>· 침수예상지역 및 재해위험지구 등 위험지역 우회 경로 탐색 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn15">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/solution12.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2>도로명주소 활용 도로 네트워크</h2>
+                        </div>
+                        <div class="tabCon_content02">
+                            <p>· 도로명 주소 </p>
+                            <p>· 표준 노드 링크 </p>
+                            <p>· 분리된 노드를 통합하여 새로운 경로 생성 가능 </p>
+                        </div>
+                        <div class="tab_btn" id="solutionBtn16">
+                            <button>자세히 알아보기</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </section>
+    <script>
+        // 탭메뉴
+        $("#tab1").click(function () {
+            $("#tabCon_01").show();
+            $("#tabCon_02").hide();
+            $("#tabCon_03").hide();
+            $("#tabCon_04").hide();
+            $("#tabCon_05").hide();
+        });
+        $("#tab2").click(function () {
+            $("#tabCon_02").show();
+            $("#tabCon_01").hide();
+            $("#tabCon_03").hide();
+            $("#tabCon_04").hide();
+            $("#tabCon_05").hide();
+        });
+        $("#tab3").click(function () {
+            $("#tabCon_03").show();
+            $("#tabCon_01").hide();
+            $("#tabCon_02").hide();
+            $("#tabCon_04").hide();
+            $("#tabCon_05").hide();
+        });
+        $("#tab4").click(function () {
+            $("#tabCon_04").show();
+            $("#tabCon_01").hide();
+            $("#tabCon_02").hide();
+            $("#tabCon_03").hide();
+            $("#tabCon_05").hide();
+        });
+        $("#tab5").click(function () {
+            $("#tabCon_05").show();
+            $("#tabCon_01").hide();
+            $("#tabCon_02").hide();
+            $("#tabCon_03").hide();
+            $("#tabCon_04").hide();
+        });
+    </script>
+
+    <section class="main04_section">
+        <div>
+            <p>라미랩의 솔루션을 <em> 직접 체험해보세요.</em></p>
+            <button onclick="location.href = 'https\://demo.lamilab.xyz'">데모 사용해보기 </button>
+            <div class="demo_infoimg">
+                <!-- <img src="./images/mountains-gd3d6879ed_1280.jpg" alt=""> -->
+
+            </div>
+            <!-- <img src="./images/mountains-gd3d6879ed_1280.jpg" alt=""> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_wrap">
+            <div class="footer">
+                <img src="./images/lami_logo.svg" alt="">
+            </div>
+            <div class="footer">
+                <div class="footer_icon">
+                    <img src="./images/footer_icon01.svg" alt="">
+                    <p>hlib.group@gmail.com</p>
+                </div>
+                <div class="footer_icon">
+                    <img src="./images/footer_icon03.svg" alt="">
+                    <p>010-5529-0514</p>
+                </div>
+                <div class="footer_icon">
+                    <img src="./images/footer_icon02.svg" alt="">
+
+                    <p>042-367-0524</p>
+                </div>
+                <div class="footer_icon">
+                    <img src="./images/youtube.svg" alt="">
+                    <a href="https://youtube.com/shorts/LdJV7Lzg-5Y?feature=share" target='_blank'>
+                        <p>Youtube 데모 시연영상</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer_info_Wrap">
+                <div class="footer_info">
+                    <p>대표자</p> <span>박병용</span>
+                </div>
+                <div class="footer_info">
+                    <p>사업분야</p> <span>공간정보 지식서비스</span>
+                </div>
+                <div class="footer_info">
+                    <p>설립일</p> <span>2016년 5월 20일</span>
+                </div>
+                <div class="footer_info">
+                    <p>주소</p> <span>대전광역시 유성구 대학로 99,<br> 산학연교육연구관 903호(충남대학교)</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="vmap" style="width: 100%; height: 500px; overflow: hidden;">
+        </div> -->
+        <div class="googleMap">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.6565089768883!2d127.34241305333171!3d36.366195516166925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654df135419105%3A0xf18bb6ef6ad5a7fa!2z652866-4656pIOyjvOyLne2ajOyCrA!5e0!3m2!1sko!2skr!4v1664504685581!5m2!1sko!2skr"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+    <!-- 팝업 -->
+
+    <article class="infopopup" id="solutionPopup01">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>실시간 상황 분석</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup01.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>최근 1개월 지진 정보 지도 표출</p>
+                    <span>• 기상청 지진 API 연계</span>
+                    <span>• 최근 한 달 내 지진 정보 실시간 수집</span>
+                    <span>• 환경 설정 기준 값 이상 지진정보 표출</span>
+
+                    <p>지진 관련 중요 위치 정보 등 제공</p>
+                    <span>• 대피소, 주민센터, 소방서
+                        등 상시 표출</span>
+                    <span>• 마커, SHP, 히트맵
+                        등 공간정보 기능</span>
+                    <span>• 테이블, 그래프
+                        등 실행</span>
+
+                    <p> 시나리오 분석 정보 연계</p>
+                    <span>• 우클릭 기능으로 등록된 시나리오 선택 실행</span>
+                    <span>• 실시간 지진 정보와 유사한 시나리오 분석</span>
+
+                    <p>화면 데이터 반출 기능 제공</p>
+                    <span>• 화면 출력 </span>
+                    <span>• SHP, GeoJSON 파일 반출</span>
+
+                    <p>상황 발생 시 대응 매뉴얼 기능 제공</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup02">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>건물 피해 분석</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup03.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>인공지능 기반 지진 건물 피해 예측</p>
+                    <span>• 건물, 과거 피해 지반데이터 학습데이터로 구축</span>
+
+                    <p>3D GIS 기반 지진 건물 피해 시각화</p>
+                    <span>• Cesium JS 및 Three.js 그래픽 라이브러리 활용</span>
+                    <span>• 건물의 지진 피해 규모 값을 구간으로 나누어 설정한 색상 값으로 지도에 표출</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup03">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>지반 운동 분석</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup02.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>슈퍼컴퓨터 활용 지진 속도모델 계산
+                    </p>
+                    <span>• 부산광역시 200개 지점 실측 지반 데이터 기반 가상
+                        지진 발생 시나리오 분석</span>
+                    <span>• 지점별 최대지반가속도(PGA)의 계산 결과를 시계열
+                        데이터로 생성.</span>
+
+                    <p>시계열 데이터 최적화를 통한 지반 운동 시뮬레이션</p>
+                    <span>• Three.js 그래픽 라이브러리를 활용한 최대지반가속
+                        도 값을 3차원 애니메이션으로 처리</span>
+                    <span>• 가속도 값 구간에 따른 색상 설정으로 권역별 전파 형
+                        상 분석</span>
+                    <span>• 애니메이션 크기를 조절하여 도시 중심, 지진파 중심
+                        스타일 조정 기능 제공</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup04">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>실시간 상황 분석</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup04.png" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>기상 특보 현황</p>
+                    <span>• 기상 특보 API 실시간 호출</span>
+                    <span>• 사용자 지역 하이라이트 표시</span>
+                    <p>침수 예측 정보</p>
+                    <span>• 특보 발효 시 호우주의보/호우경보 기준에 따른 위험 지역 표출</span>
+                    <span>• 관리자 설정 강수량 이상 지역만 리스트업</span>
+                    <span>• 3시간, 12시간 합산 강수량에 따라 관심/주의/경계/심각의 위기경보 상태 표시</span>
+                    <span>• 위험 시군구 선택 시 유사 시나리오 실행</span>
+                    <span>• 침수 예측 지역 확인</span>
+                    <span>• 우클릭 실행하여 소속 부서의 대응매뉴얼(지자체 현장조치 행동매뉴얼) 실행.</span>
+
+                    <p>레이더 현황</p>
+                    <span>• 기상청 기상 레이더 API를 연계하여, 당일 00:00부터 5분 단위 레이더 이미지 실행</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup17">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>대응 메뉴얼 제공</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup14.png" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>대응 메뉴얼 연동
+
+                    </p>
+                    <span>• 침수 예측 정보 위험 지역 선택 후 대응 매뉴얼 실행 시 해당 지자체의 부서별 단계별 대응 메뉴얼 제공
+                    </span>
+                    <span>• 대응 업무와 연관된 솔루션 기능 리스트 표출 및 실행 제공<br>
+                        예) 유관 기관 비상연락망
+
+                    </span>
+                    <span>• 체크리스트를 저장하고 불러올 수 있어, 과거 상황 시 대응 정보 기록 가능.
+                    </span>
+                    <span>• 대응 1~4단계마다 체크박스 기능을 통해 현 대응상황 온라인 모니터링 진행.
+                    </span>
+
+                    <p>부서별 대응매뉴얼 구축
+                    </p>
+                    <span>• 솔루션 관리자 기능으로 매뉴얼을 구축하고 갱신할 수 있는 기능 제공.
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup05">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>내수 침수 분석</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup05.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>내수침수 시나리오 분석</p>
+                    <span>• SWMM(Stormwater Management Model)에 따른 예상 내수침수 시나리오를 시각화할 수 있음</span>
+                    <span>• SWMM 방식으로 하수관망 배수시스템과 더불어 표면 모델링을 통해 2차원 침수 시뮬레이션 수행.</span>
+                    <span>• 현재 부산광역시에서 시간당 50, 105, 150 mm 강우 시 침수 예상 지역 제공</span>
+                    <span>• 3차원 GIS 방식으로 침수 예상 지역과 해당 지역에 포함되는 건물 지오메트리(Geometry) 표현.</span>
+                    <span>• 행정구역 단위로 침수 피해 면적과 전체 행정구역 면적 대비 침수 면적 비교 제공.</span>
+                    <span>• 스위치 on/off를 통한 시나리오 숨김 및 해지 가능.</span>
+
+                    <p>다양한 공간정보 제공</p>
+                    <span>• 중요 거점 마커와 연관된 마커 정보 제공</span>
+                    <span>• 침수흔적도, 홍수발생지역, 해안침수발생지역 등 상시 등록 가능</span>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup06">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>마커</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup06.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>지도의 해당 위치에 아이콘을 표시하고 상세정보를 텍스트, 이미지, 동영상의 형태로 제공할 수 있는 기능을 등록할 수 있습니다.
+                    </p>
+
+                    <p>지역 선택</p>
+                    <span>• 지역이 동일한 사용자가 기능을 실행할 수 있습니다. 예를 들어 기능의 지역 선택 값이 부산광역시 라면, 사용자 지역이 부산광역시 인 사용자에게만 기능이 표시됩니다.
+                        전체지역을 선택하면 모든 사용자가 기능을 실행할 수 있습니다.
+                    </span>
+                    <p>팝업 종류
+                    </p>
+                    <span>• 지도에서 마커를 클릭했을 때 제공하는 정보의 유형입니다. 텍스트는 표 형태로 제공하며, 이미지와 동영상은 name과 url 필드명을 입력해야 합니다.
+                    </span>
+                    <p>데이터 종류</p>
+                    <span>• 기능에 대한 데이터는 파일과 API의 2가지 방식으로 입력될 수 있습니다. API를 선택할 경우 연동할 API 인증키와 요청 값을 입력 하십시오.
+                    </span>
+                    <p>필드 매핑
+                    </p>
+                    <span>• 지도 매핑은 좌표 또는 주소로 처리됩니다. 팝업 종류가 테이블인 경우 정보 제공 필드를 입력합니다. 실제 필드명과 표시할 이름을 각각 입력합니다.
+                    </span>
+                    <p>연관 기능 지정</p>
+                    <span>• 선택한 솔루션(지진, 침수, 미세먼지)의 다른 기능을 팝업 창에 함께 목록으로 보여줄 수 있습니다.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup07">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>SHP</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup07.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>선 또는 면으로 된 지리정보를 지도에 시각화 할 수 있는 기능입니다. 파일 형식은 SHP 및 관련 파일이며, 시각화 스타일을 설정할 수 있습니다.
+                    </p>
+
+                    <p>파일 업로드</p>
+                    <span>• SHP 파일 속성정보를 참고하여 레이어로 처리할 변수를 선택합니다. 단색 또는 복수색으로 설정할 수 있습니다.
+
+                    </span>
+                    <span>• 복수형의 경우, 변수 특성에 따라 분류형과 구간형을 선택합니다.
+                    </span>
+                    <em>- 구간인 경우 범례개수를 입력합니다. 각 구간의 시작과 끝 값을 직접 입력하여 바꿀 수 있습니다.
+                    </em>
+                    <em>- 색상 설정에서 각 색상을 클릭하여 원하는 색상으로 변경합니다.
+                    </em>
+                    <span>• 단색의 경우, 패턴을 지정할 수 있습니다. 패턴은 선의 간격과 굵기, 모양을 선택할 수 있습니다.
+                    </span>
+                    <span>• 색상 설정 또는 패턴색에서 색상을 클릭하여 원하는 색으로 변경합니다.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup08">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>히트맵</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup08.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>좌표에 해당하는 숫자 값을 구간별 레이어 설정을 통해 히트맵의 형태로 시각화 하는 기능입니다.</p>
+
+                    <p>필드 설정
+                    </p>
+                    <span>• 쉼표로 분리된 UTF-8 형식의 CSV 파일을 업로드합니다.
+                    </span>
+                    <span>• 업로드 파일에 들어있는 필드 중 위도, 경도, 히트맵으로 처리할 변수를 선택합니다.
+                    </span>
+                    <span>• 구간의 개수를 입력하거나 선택합니다. 필요한 경우 개별 구간의 시작과 끝 값을 변경할 수 있습니다.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup09">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>그래프</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup09.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>지역 및 솔루션과 관련한 정보를 그래프 형태로 제공할 수 있는 기능입니다.</p>
+
+                    <p>파일 업로드 및 필드 설정</p>
+                    <span>• 쉼표로 분리된 UTF-8 형식의 CSV 파일을 업로드합니다.
+                    </span>
+                    <span>• X축과 Y축에 사용할 필드명을 입력하십시오. 입력할 내용은 업로드 파일에 사용된 원래 필드명과 화면에 표시할 이름입니다.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup10">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>테이블</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup10.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>지역 및 솔루션과 관련한 정보를 테이블 형태로 제공할 수 있는 기능입니다.</p>
+
+                    <p>파일 업로드 및 필드 설정</p>
+                    <span>• 쉼표로 분리된 UTF-8 형식의 CSV 파일을 업로드합니다.
+                    </span>
+                    <span>• 업로드 파일에 사용된 원래 필드명과 화면에 표시할 이름을 매핑할 수 있도록 각각의 이름을 입력하십시오.
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup11">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>3D 기반 시뮬레이션 예측 비교</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup015.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>과거 침수 사례 시뮬레이션 비교</p>
+                    <span>• 기존 침수 지도 데이터와 비교 가능 (침수흔적도, 침수예상도)</span>
+                    <span>• 시뮬레이션 입력 파일 목록 다운로드 가능
+                    </span>
+                    <p>시간당 침수 시나리오 구축</p>
+                    <span>• 시간당 70, 90, 120mm/h 침수 시나리오 구축</span>
+                    <span>• 시/군/구/분구별 구역 및 범위 설정 가능</span>
+                    <span>• SWMM, ITZI 등 유역 모델링 엔진 기반 국내 실정에 맞는 침수 예방 프로그램 도입</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup12">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>과거 침수 내역 등 데이터 관리</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup017.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>침수지도 비교를 위한 데이터관리 기능 개발</p>
+                    <span>• 침수흔적도 업로드 기능</span>
+                    <span>• 침수예상도(환경부) 업로드 기능
+                    </span>
+                    <p>시도별 하천, 유역 데이터관리 기능 개발</p>
+                    <span>• 시도별 배수구역 데이터(유역 데이터) 업로드 기능</span>
+                    <span>• 시도별 하천데이터 업로드 기능</span>
+                    <p>시뮬레이션 고도화를 위한 환경공간정보 데이터 관리 기능 개발</p>
+                    <span>• 강수량, DEM, 토지피복도 레벨, 침투능 방식, 하수관망 크기, 배수효율, 경계조건, 건물적용여부 등 수문 인자 입력 가능</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup13">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>하수관거 데이터 관리</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup016.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>데이터 하수관거 수정</p>
+                    <span>• 배수분구별 하수관 필터링 후 하수관 모델링</span>
+                    <span>• 오류찾기 기능 실행하여 문제 관로 식별 후 데이터 자동 보정
+                    </span>
+                    <span>• 필요 시 관거 속성 확인 후 수동으로 관거, 맨홀, 토구 생성</span>
+                    <p>데이터 아카이브</p>
+                    <span>• 배수분구 수정 삭제 가능</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup14">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>시나리오관리</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup11.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <p>솔루션 시나리오별 최적대피로 안내 </p>
+                    <span>• 지진, 미세먼지 – 집결지 출발 대피소 안내
+                    </span>
+                    <span>• 침수 – 침수 지역 침수심 기준 이상 지역 대피
+                    </span>
+
+                    <p>대피로 데이터</p>
+                    <span>• 도로명주소 노드링크 데이터 구축
+                    </span>
+                    <span>• 표준노드링크 데이터 구축
+                    </span>
+                    <span>• 도로명주소+표준노드링크 혼합(테스트 중)
+                    </span>
+                    <p>최적대피로 안내</p>
+                    <span>• 대피로 계산 시 대피 지역 설정
+                    </span>
+                    <span>• 일정 수준 이상인 침수심이 발생한 지역만 대피하도록 설정.</span>
+                    <span>• 침수 지역 내에 포함된 노드를 폴리곤에서 1개만 추출 하여 출발지로 설정하며, 직선거리가 가까우며 침수 되지 않은 대피소 3개에 대하여 Dijksatra 및 A*
+                        알고리즘에 따른 경로값을 계산</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup15">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>모바일 안전대피로 앱</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/popup12.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <span>• 크롬 PWA(Progressive Web Application) 방식의 웹앱 구현
+
+                    </span>
+                    <span>• 목표 이용자: 일반 시민
+                    </span>
+                    <span>• 현재 위치정보 접근 허용 시 현위치 기준 대피로 제공
+                    </span>
+                    <span>• 검색 주소 지오 코딩 처리 후 대피로 제공 </span>
+                    <span>• 대피로 API 처리</span>
+                    <span>• 현위치/검색주소 위치 기준 요청 </span>
+                    <span>• 출발지 결정 후 최단거리 대피로 산출 </span>
+                    <span>• 도착지, 대피경로, 침수예상지역 데이터 제공</span>
+                    <span>• 현재 위치 침수 예측 정보와 유사한 내수침수 시나리오 침수
+                        지역 표시</span>
+                    <span>• 0 초과 50 이하 - 50 mm 시나리오 침수 지역, 50 초과 105 이하 – 105 mm 시나리오 침수 지역, 105 초과 – 150 mm 시나리오 침수 지역
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+    <article class="infopopup" id="solutionPopup16">
+        <div class="infopopup_inner">
+            <div class="infopopup_title">
+                <p>도로명주소 활용 도로 네트워크 구축</p>
+                <svg class="infopopup_close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                    <path
+                        d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z">
+                    </path>
+                </svg>
+            </div>
+            <div class="infopopup_content">
+                <div class="infopopup_img">
+                    <img src="./images/solution12.jpg" alt="">
+                </div>
+                <div class="infopopup_text">
+                    <span>• 도로명주소</span>
+                    <span>• 표준노드링크
+                    </span>
+                    <span>• 원래 분리되었던 노드를 통합하여 새로운 경로 생성 가능</span>
+                    <span>• 노드가 거리가 아래 그림은 20M 내에 있는 3개의 노드를 1개의 표준노드링크 노드ID로 통합한 후 지도와 길찾기 쿼리 예시</span>
+                    <span>• 도로명주소와 표준로드링크가 연결이 되어 서로 길찾기가 가능해짐</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+
+
+
+
+
+    <!-- Channel Plugin Scripts -->
+    <script>
+        (function () {
+            var w = window;
+            if (w.ChannelIO) {
+                return (window.console.error || window.console.log || function () {})(
+                    'ChannelIO script included twice.');
+            }
+            var ch = function () {
+                ch.c(arguments);
+            };
+            ch.q = [];
+            ch.c = function (args) {
+                ch.q.push(args);
+            };
+            w.ChannelIO = ch;
+
+            function l() {
+                if (w.ChannelIOInitialized) {
+                    return;
+                }
+                w.ChannelIOInitialized = true;
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            if (document.readyState === 'complete') {
+                l();
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', l);
+            } else {
+                window.addEventListener('DOMContentLoaded', l, false);
+                window.addEventListener('load', l, false);
+            }
+        })();
+        ChannelIO('boot', {
+            "pluginKey": "700c231c-3eb6-448f-94aa-3b72c2be0ec8"
+        });
+    </script>
+    <!-- End Channel Plugin -->
+    <script>
+        $("#Ksafetypopupclosebtn").click(function () {
+            $("#Ksafetypopup1").hide();
+        });
+        $(".infopopup_close").click(function () {
+
+            $(".infopopup").hide();
+            $('body').css('overflow', 'auto');
+        });
+
+
+        for (let i = 1; i < 18; i++) {
+            function fillZero(width, str) {
+                return str.length >= width ? str : new Array(width - str.length + 1).join('0') + str; //남는 길이만큼 0으로 채움
+            }
+            $("#solutionBtn" + fillZero(2, i + "")).click(function () {
+                $("#solutionPopup" + fillZero(2, i + "")).show();
+                $('body').css('overflow', 'hidden');
+            });
+        }
+
+        // $(".btnCon").click(function () {
+        //     var windowWidth = $(window).width();
+        //     var id_check = $(this).attr("id");
+        //     //console.log("windowWidth, id_check : "+windowWidth+", "+id_check);
+
+        //     if (windowWidth > 1481) {
+        //         if (id_check == "tab3") {
+        //             $("#mainSection").css("height", "1040px");
+        //         } else {
+        //             $("#mainSection").css("height", "680px");
+        //         }
+        //     } else if (891 < windowWidth && windowWidth <= 1481) {
+        //         if (id_check == "tab2") {
+        //             $("#mainSection").css("height", "600px");
+        //         } else if (id_check == "tab3") {
+        //             $("#mainSection").css("height", "1020px");
+        //         } else {
+        //             $("#mainSection").css("height", "620px");
+        //         }
+        //     } else if (769 < windowWidth && windowWidth <= 891) {
+        //         if (id_check == "tab1") {
+        //             $("#mainSection").css("height", "1040px");
+        //         } else if (id_check == "tab3") {
+        //             $("#mainSection").css("height", "1370px");
+        //         } else if (id_check == "tab2") {
+        //             $("#mainSection").css("height", "580px");
+        //         } 
+        //          else {
+        //             $("#mainSection").css("height", "980px");
+        //         }
+        //     }
+        //     else if (601 < windowWidth && windowWidth <= 768) {
+        //         if (id_check == "tab1") {
+        //             $("#mainSection").css("height", "1040px");
+        //         } else if (id_check == "tab3") {
+        //             $("#mainSection").css("height", "1450px");
+        //         } else if (id_check == "tab2") {
+        //             $("#mainSection").css("height", "580px");
+        //         } 
+        //          else {
+        //             $("#mainSection").css("height", "1030px");
+        //         }
+        //     }
+        // })
+    </script>
+    <script>
+        // 박람회 팝업 
+        $(document).ready(function () {
+            if ($("#Ksafetypopupimg20").css("display", "block") && $("#Ksafetypopupimg4").css("display",
+                    "block")) {
+                $("#Ksafetypopup").css("display", "block");
+            }
+        });
+    </script>
+
+    <script>
+        todayOpen('Ksafetypopupimg20');
+        // todayOpen('Ksafetypopupimg4');
+
+        // 창닫기  
+        function todayClose(winName, expiredays) {
+            setCookie(winName, "expire", expiredays);
+            var obj = eval("window." + winName);
+            obj.style.display = "none";
+
+            if (!$("#Ksafetypopupimg20").is(':visible') && !$("#Ksafetypopupimg4").is(":visible")) {
+                $("#Ksafetypopup").fadeOut();
+            }
+
+        }
+
+        // 창열기
+        function todayOpen(winName) {
+            var blnCookie = getCookie(winName);
+            var obj = eval("window." + winName);
+            console.log(blnCookie);
+            if (!blnCookie) {
+                obj.style.display = "block";
+            } else {
+                obj.style.display = "none";
+            }
+
+            if (!$("#Ksafetypopupimg20").is(':visible') && !$("#Ksafetypopupimg4").is(":visible")) {
+                $("#Ksafetypopup").fadeOut();
+            }
+        }
+
+        // 쿠키 가져오기  
+        function getCookie(name) {
+            var nameOfCookie = name + "=";
+            var x = 0;
+            while (x <= document.cookie.length) {
+                var y = (x + nameOfCookie.length);
+                if (document.cookie.substring(x, y) == nameOfCookie) {
+                    if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                        endOfCookie = document.cookie.length;
+                    return unescape(document.cookie.substring(y, endOfCookie));
+                }
+                x = document.cookie.indexOf(" ", x) + 1;
+                if (x == 0)
+                    break;
+            }
+            return "";
+        }
+
+        // 24시간 기준 쿠키 설정하기  
+        // 만료 후 클릭한 시간까지 쿠키 설정  
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() +
+                ";"
+        };
+    </script>
+    <script>
+        // $(".Ksafetypopupclosebtnclose").click(function () {
+        //     $(this).parent().parent().parent().fadeOut();
+        //     let cnt = 0;
+        //     for (let i = 0; i < $("#Ksafetypopup > div").length; i++) {
+        //         let item = $("#Ksafetypopup > div")[0];
+        //         let item01 = $("#Ksafetypopup > div")[1];
+        //         if (!(item.style.display == 'none' || item01.style.display == 'none')) {
+        //             cnt++;
+        //         }
+        //     }
+
+        //     if (cnt == 0) {
+        //         $("#Ksafetypopup").fadeOut();
+        //     }
+        // });
+        $(".Ksafetypopupclosebtnclose").click(function () {
+            $(this).parent().parent().parent().fadeOut();
+            $("#Ksafetypopup").fadeOut();
+        });
+
+        function downloadPDF() {
+            var link = document.createElement('a');
+            link.href = './images/LAMILAB_leaflet.pdf';
+            link.download = 'LAMILAB_leaflet.pdf';
+            link.target = '_blank';
+            link.click();
+        }
+    </script>
+</body>
+
+</html>

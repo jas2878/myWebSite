@@ -1,0 +1,401 @@
+.introductioMain {
+  background-image: url(../../public/img/Introductiobackimgtest.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.introductioMain > div {
+  border-bottom: 1px solid #cdcdcd4d;
+  padding-bottom: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.IntroductioWrap {
+  background-color: #04125f;
+}
+
+.IntroductioHeader {
+  position: static;
+  display: flex;
+  align-items: center;
+  background-color: #04125f;
+}
+.IntroductioHeader > div ul .Introductiolist {
+  color: var(--main-point-color);
+}
+.IntroductioHeader > div ul .Introductiolist .Introductiolistmain {
+  color: var(--main-point-color);
+}
+.IntroductioHeader .subnavwrap li:hover a {
+  color: var(--main-point-color);
+}
+/* 상단 탭메뉴 */
+div.Introductiolink {
+  padding: 0;
+  width: 100%;
+}
+.Introductiolink a {
+  display: flex;
+  font-size: 27px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.Introductiolink a:first-child {
+  border-bottom: 5px solid var(--main-point-color);
+  color: var(--main-point-color);
+}
+.Introductiolink > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CertifiedWrap > div h2 {
+  font-size: 40px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.introductioMain > div h2 {
+  font-size: 40px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+/* 회사소개 타이틀 */
+.introductiotitle {
+  margin-top: 80px;
+  text-align: center;
+}
+.introductiotitle div p {
+  font-size: 25px;
+  font-weight: 300;
+}
+.introductiotitle div p b {
+  font-size: 29px;
+  color: var(--main-point-color);
+  font-weight: 600;
+}
+.introductiotitleInner p:first-child {
+  margin-bottom: 50px;
+}
+
+.introductiotitleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+.introductiotitle a {
+  display: flex;
+  margin-top: 70px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  color: #0053b9;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 15px 40px;
+  /* margin-right: 0; */
+}
+
+.introductioinfo {
+  background-color: #04125f;
+  padding-top: 90px;
+}
+
+.introductioinfo > .introductioinfowrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.introductioinfo > .introductioinfowrap > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.introductioinfo > .introductioinfowrap > div img {
+}
+.introductioinfo > .introductioinfowrap > div p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.introductioinfo > .introductioinfowrap > div span {
+  display: block;
+  font-size: 20px;
+}
+
+/* cl소개 */
+.clinfoWrap {
+  margin-top: 90px;
+}
+.clinfoWrap > .clinfoinner {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.clinfoinner > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.clinfoinner > div p {
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.Brandinginfo {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin-top: 110px;
+}
+/* 회사 연혁  */
+.lamilabhistory > h2 {
+  background-color: #04125f;
+  text-align: center;
+  /* border-bottom: 1px solid #fff; */
+  padding: 50px 0;
+  width: 100%;
+
+  margin-bottom: 0 !important;
+  /* margin-top: 90px; */
+}
+
+.lamilabhistory {
+  padding-bottom: 0 !important;
+}
+.tab-menu li span {
+  font-weight: bold;
+}
+.tab-text {
+  font-size: 16px;
+  font-size: 32px;
+  color: #9e9e9e;
+}
+
+.active span {
+  font-size: 32px;
+  /* transition: 0.1s; */
+  color: #fff;
+}
+
+.lamilabhistoryWrap {
+  /* display: flex; */
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-color: #04125f;
+}
+
+.lamilabhistoryWrap > .tab-menu {
+  /* width: 30%; */
+  /* height: 100%; */
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+.lamilabhistoryWrap > .tab-menu li {
+  /* margin-bottom: 100px; */
+  cursor: pointer;
+}
+.lamilabhistoryWrap > .tab-menu li:last-child {
+  /* margin-bottom: 0; */
+}
+.lamilabhistoryWrap > .tab-content {
+  /* width: 70%; */
+  /* border-left: 1px solid #fff; */
+  margin: 0 auto;
+  /* position: relative; */
+}
+.tab-content > div {
+  width: 100%;
+}
+/* .lamilabhistoryWrap > .tab-content::after {
+  content: "";
+  border-left: 1px solid #fff;
+  position: absolute;
+  left: -50px;
+  top: 0;
+  height: 100%;
+} */
+.tab-wrap {
+  display: flex;
+  align-content: flex-start;
+  margin-top: 80px;
+}
+.tab-title {
+  width: 37%;
+  margin: 0;
+}
+div.tab-title h2 {
+  font-size: 28px;
+}
+
+.tab-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tab-content p {
+  font-size: 38px;
+  margin-bottom: 40px;
+  margin-left: 0;
+  margin-top: 10px;
+}
+.tab-content img {
+  margin-left: 0;
+  margin-top: 45px;
+  border-radius: 10px;
+}
+.tab-content span {
+  margin-left: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.tab-content span:last-child {
+  margin-bottom: 0;
+}
+/* 회사 인증 */
+.CertifiedWrap {
+  background-color: #fff;
+}
+.CertifiedWrap > div {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 90px;
+}
+.CertifiedWrap > div h2 {
+  padding-top: 90px;
+  color: #333;
+}
+.Certifiedinner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+div.Certifiedinner01 {
+  align-items: center;
+}
+.Certifiedinnertop {
+  margin-bottom: 110px;
+}
+.Certifiedinner > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Certifiedinner > div img {
+  height: 100%;
+}
+.Certifiedinner > div p {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 고객사 */
+.clientimgWrap {
+  border-top: 1px solid #787878;
+}
+.clientimgWrap > div {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.clientimgWrap > div:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .clinfoWrap > .clinfoinner {
+    width: 90%;
+  }
+  .clinfoinner > div:nth-child(odd) {
+    width: 45%;
+  }
+  .clinfoinner div img {
+    width: 50%;
+  }
+  div.clinfoinner > div p {
+    font-size: 16px;
+  }
+  .Introductiolink > div {
+    width: 70%;
+  }
+  .Introductiolink a {
+    font-size: 10px;
+  }
+  .introductioMain > div h2 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .introductiotitle div p {
+    font-size: 10px;
+    width: 80%;
+  }
+  .introductiotitleInner p:first-child {
+    margin-bottom: 20px;
+  }
+  .introductiotitle div p b {
+    font-size: 10px;
+  }
+  .introductiotitle {
+    margin-top: 20px;
+  }
+  .introductiotitle a {
+    font-size: 10px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    padding: 4px 10px;
+  }
+  .introductioMain > div {
+    padding-bottom: 20px;
+  }
+  .introductioMain > .Introductiolink {
+    padding: 0;
+  }
+  .introductioinfo {
+    padding-top: 20px;
+  }
+  .introductioinfo > .introductioinfowrap > div img {
+    width: 50px;
+  }
+  .introductioinfo > .introductioinfowrap > div p {
+    font-size: 11px;
+  }
+  .introductioinfo > .introductioinfowrap > div span {
+    font-size: 10px;
+  }
+  .clinfoWrap {
+    margin-top: 20px;
+  }
+  .lamilabhistory > h2 {
+    padding: 20px 0;
+  }
+}

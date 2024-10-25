@@ -1,0 +1,117 @@
+.newsHeader {
+  position: static;
+  display: flex;
+  align-items: center;
+  background-color: #04125f;
+}
+.newsHeader > div ul .Introductiolist1 > a {
+  color: var(--main-point-color);
+}
+
+.newsHeader > div ul .Introductiolist .Introductiolistnews {
+  color: var(--main-point-color);
+}
+
+.newsSection {
+  background-image: url(../../public/img/Introductiobackimgtest.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-color: #04125f;
+}
+/* 소개 탭메뉴 */
+div.newslink {
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #cdcdcd4d;
+}
+.newslink a {
+  display: flex;
+  font-size: 27px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.newslink a:last-child {
+  border-bottom: 5px solid var(--main-point-color);
+  color: var(--main-point-color);
+}
+.newslink > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 뉴스타이틀 */
+.newsMainTitle {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.newsMainWrap {
+  width: 80%;
+  padding-bottom: 40px;
+  /* height: 50vh; */
+}
+.newsMainWrap > div {
+  max-height: 100%;
+  overflow: auto;
+}
+.newsMainWrap > div::-webkit-scrollbar {
+  display: none;
+  width: 5px;
+  background-color: #ffffff;
+}
+.newsMainWrap > div a {
+  display: block;
+  border-bottom: 1px solid #cdcdcd4d;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+.newsMainWrap > div a:last-child {
+  margin-bottom: 0;
+}
+.newsMainWrap > div:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  /* padding-bottom: 50px; */
+}
+.newsMaintext,
+.newsMaininfo {
+  display: flex;
+  align-items: center;
+}
+.newsMaintext p {
+  font-size: 24px;
+  margin-left: 0;
+  font-weight: 400;
+  width: 80%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.newsMaininfo {
+  margin-bottom: 10px;
+}
+
+.newsMaintext img {
+  margin-right: 0;
+  width: 30px;
+}
+.newsMaininfo b,
+.newsMaininfo span,
+.newsMaininfo p {
+  font-size: 18px;
+  font-weight: 350;
+  margin-left: 0;
+  margin-right: 5px;
+}

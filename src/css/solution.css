@@ -1,0 +1,320 @@
+.Solutionheader {
+  background-color: #ececec;
+  position: static;
+  display: flex;
+  align-items: center;
+}
+
+.Solutionheader > div ul .solutionNav {
+  color: #0053b9;
+}
+.Solutionheader > div ul .Introductiolist .IntroductioSolution {
+  color: #0053b9;
+}
+
+.Solutionheader div svg path.Solutionlogo {
+  fill: #0053b9;
+}
+
+.Solutionheader div > ul > li a {
+  color: #a6a6a6;
+}
+
+header.Solutionheader div > ul > li a:hover {
+  color: #0053b9;
+}
+
+header.Solutionheader .subNav .subnavwrap {
+  background-color: var(--main-point-color);
+}
+
+/* 솔루션 소개 */
+.solutionMain {
+  margin-bottom: 110px;
+}
+.solutionTitleWrap {
+  margin-top: 70px;
+}
+.solutionTitleWrap h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.solutionTitleWrap p {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+}
+
+.solutionimg {
+  display: flex;
+}
+
+.solutioninfowrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+}
+.solutioninfowrap h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 80px;
+}
+
+.solutioninfowrap > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 60%;
+  /* flex-direction: column; */
+}
+.solutioninfowrap > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.solutioninfowrap > div > div p {
+  color: #333;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 60px;
+}
+.solutioninfowrap > div > div b {
+  color: #0053b9;
+}
+
+/* 솔루션탭메뉴 */
+.tabmenu {
+  background-color: #172f63;
+}
+.solutionMenu {
+  width: 70%;
+  padding: 50px 0;
+}
+.solutionMenu .active span {
+  color: #0053b9;
+}
+.solutionMenu .active {
+  background-color: #fff;
+}
+.solutionMenu {
+  display: flex;
+  align-items: center;
+}
+
+.solutionMenu li {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 5px 50px;
+  cursor: pointer;
+}
+
+.solutionMenu li span {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* 슬라이드 */
+.swiperWrap {
+  text-align: center;
+  margin-top: 20px;
+}
+.swiperWrap h2 {
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+.swiperWrap p {
+  font-size: 34px;
+  font-weight: bold;
+  width: 80%;
+}
+
+.swipercontent {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+.swipercontent > div:last-child {
+  /* width: 70%; */
+  margin-left: 80px;
+}
+
+.swiperimg {
+  margin-right: 0;
+}
+.swiperinfotext {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+}
+.swiperinfotextLeft > div {
+  margin-left: 0;
+}
+.swiperinfotext > div {
+  width: 50%;
+  margin-left: 0;
+}
+.swiperinfotext h2 {
+  font-size: 30px;
+  color: var(--main-point-color);
+}
+.swiperinfotext p {
+  font-size: 26px;
+}
+div.swiperinfotextinner {
+  margin-left: 70px;
+}
+
+span.swiper-pagination-bullet {
+  background-color: #d9d9d9;
+  width: 100px;
+  height: 10px;
+  border-radius: 3px;
+  margin: 0 10px !important;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+div.swiper {
+  padding-bottom: 120px;
+}
+
+span.swiper-pagination-bullet-active {
+  background-color: var(--main-point-color);
+  width: 180px;
+}
+div.swiper-pagination {
+  margin-bottom: 30px;
+}
+
+.Counseling {
+  background-image: url(../../public/img/Counselingimg.png);
+}
+
+.Counseling h2 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  text-align: center;
+  padding-top: 60px;
+}
+.Counseling div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+.Counseling div a {
+  display: flex;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #0053b9;
+  padding: 20px 50px;
+  font-size: 34px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.swiperinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.swiperinner > b {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.accordion-collapse {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+/* 솔루션 메뉴 섹션 */
+.solutionMenuSection {
+  width: 90%;
+  margin-top: 120px;
+  padding-top: 120px;
+  border-top: 1px solid #787878;
+  display: flex;
+  align-items: flex-start;
+  /* background-color: #0053b9; */
+}
+.accordion-button {
+  width: 100%;
+  border: none;
+  background-color: #0053b9;
+  padding: 20px 10px;
+  text-align: left;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.collapsed {
+  background-color: transparent !important;
+  border: 1px solid #767676 !important;
+  color: #333 !important;
+}
+.solutionMenuSectionTitle {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  margin-left: 0;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.solutionMenuSectionTitle p {
+  color: #333;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.solutionMenuSectionTitle img {
+  width: 100%;
+}
+.solutionMenuSectionTitle span {
+  color: #333;
+  font-size: 24px;
+}
+
+.accordionWrap {
+  width: 60%;
+  margin-right: 0;
+}
+.accordion-body > .swiperinfotextTop {
+  margin-bottom: 20px;
+}
+
+.accordion-body .swiperinfotext h2 {
+  font-size: 24px;
+  color: #0053b9;
+}
+.accordion-body .swiperinfotext p {
+  font-size: 24px;
+  color: #333;
+}
+
+.accordion-item {
+  margin-bottom: 40px;
+}
+.accordion-body {
+  margin-top: 20px;
+}

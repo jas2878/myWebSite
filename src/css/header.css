@@ -1,0 +1,89 @@
+header > div {
+  display: flex;
+  align-items: center;
+  width: 42%;
+  height: 80px;
+  /* background-color: #333; */
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+header svg {
+  margin-left: 0;
+  cursor: pointer;
+  width: 160px;
+}
+header div > ul > li {
+  margin-left: 40px;
+  margin-right: 0;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+  position: relative;
+}
+.subNav .subnavwrap {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #293da0;
+  border-radius: 10px;
+}
+.subNav:hover .subnavwrap {
+  display: flex;
+}
+.subNav .subnavwrap li {
+  width: 100%;
+  /* padding: 10px; */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  text-align: left;
+  border-bottom: 1px solid #ffffff66;
+  /* font */
+}
+.subNav ul.subnavwrapSolution {
+  width: 203px;
+}
+/* .subnavwrap li:hover a {
+  color: var(--main-point-color);
+} */
+.subNav .subnavwrap li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.subNav .subnavwrap li a {
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  header ul {
+    width: 70%;
+    padding: 0;
+  }
+  header div > ul > li {
+    padding: 10px 0;
+  }
+  .App div header div > ul > li {
+    font-size: 14px;
+    margin-left: auto;
+  }
+  .App div header svg {
+    width: 80px;
+  }
+  .App div header > div {
+    width: 90%;
+    height: 50px;
+  }
+}

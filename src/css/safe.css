@@ -1,0 +1,136 @@
+.safeHeader {
+  background-color: #ececec;
+  position: static;
+  display: flex;
+  align-items: center;
+}
+
+.safeHeader > div ul .solutionNav {
+  color: #0053b9;
+}
+.safeHeader > div ul .Introductiolist .IntroductioSafeinfo {
+  color: #0053b9;
+}
+
+.safeHeader div svg path.Solutionlogo {
+  fill: #0053b9;
+}
+
+.safeHeader div > ul > li a {
+  color: #a6a6a6;
+}
+
+header.safeHeader div > ul > li a:hover {
+  color: #0053b9;
+}
+header.safeHeader .subNav .subnavwrap {
+  background-color: var(--main-point-color);
+}
+
+.solutionimgwrap {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+.solutionimgwrap > div {
+  margin-left: 80px;
+}
+.solutionimgwrap img {
+  margin-right: 0;
+}
+.solutionimgwrap p {
+  color: #333;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+/* 안전대피로 소개 */
+.safeMain {
+  margin-bottom: 0;
+}
+.safeinfotext {
+  background-color: #edf5ff;
+  padding: 70px 0;
+  margin-top: 70px;
+}
+
+.safeIconinfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+.safeicontitle {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.safeicontitle h2 {
+  font-size: 40px;
+  color: #333;
+}
+.safeicontitle p {
+  font-size: 30px;
+  color: #333;
+}
+
+.safeIconinfo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 40px;
+}
+.safeIconinfo > div p {
+  color: #333;
+  font-size: 36px;
+}
+
+.safedataIcon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.safedataIcon > div img {
+  margin: 0 20px;
+}
+.safedataIcon > div p {
+  color: #333;
+  font-size: 36px;
+}
+/* 실증사례 */
+.proveSection {
+  padding: 40px 0;
+}
+.provetitle {
+  text-align: center;
+}
+
+.provetitle h2 {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 25px;
+}
+.provetitle p {
+  font-size: 36px;
+  color: #333;
+}
+
+.provecontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.provecontent > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.provecontent > div p {
+  color: #333;
+  font-size: 36px;
+  margin-top: 15px;
+}
